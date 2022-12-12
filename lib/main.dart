@@ -28,6 +28,34 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
+class MainPage extends StatefulWidget {
+  @override
+  _MainPageState createState() => _MainPageState();
+}
+class _MainPageState extends State<HomePage> {
+  @override
+  Widget build(BuildContext context) => Scaffold(
+    bottomNavigationBar: NavigationBar(destinations: [
+      NavigationDestination(
+        icon: Icon(Icons.home),
+        label: 'Home',
+      ),
+      NavigationDestination(
+        icon: Icon(Icons.favorite),
+        label: 'Favorites',
+      ),
+      NavigationDestination(
+        icon: Icon(Icons.bookmark),
+        label: 'Bookmarks',
+      ),
+      NavigationDestination(
+        icon: Icon(Icons.search),
+        label: 'Search',
+      ),
+    ]),
+  );
+}
+
 class _HomePageState extends State<HomePage> {
   File? image;
   
@@ -42,6 +70,8 @@ class _HomePageState extends State<HomePage> {
       print("Failed to pick image: $e");
     }
   }
+
+  
 
   @override
   Widget build(BuildContext context) => Scaffold(
